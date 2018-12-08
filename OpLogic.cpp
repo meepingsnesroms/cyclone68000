@@ -545,7 +545,7 @@ static int EmitAsr(int op,int type,int dir,int count,int size,int usereg)
       if (size==2)
       {
         ot("  subs r2,r2,#33\n");
-        ot("  addmis r2,r2,#33 ;@ Now r2=0-%d\n",wide);
+        ot("  addsmi r2,r2,#33 ;@ Now r2=0-%d\n",wide);
       }
       else
       {

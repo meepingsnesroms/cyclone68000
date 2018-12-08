@@ -597,7 +597,7 @@ static void PrintFramework()
   ot("  ldr r3,[r7,#0x8c] ;@ IrqCallback\n");
   ot("  add lr,pc,#4*3\n");
   ot("  tst r3,r3\n");
-  ot("  streqb r3,[r7,#0x47] ;@ just clear IRQ if there is no callback\n");
+  ot("  strbeq r3,[r7,#0x47] ;@ just clear IRQ if there is no callback\n");
   ot("  mvneq r0,#0 ;@ and simulate -1 return\n");
   ot("  bxne r3\n");
 #if INT_ACK_CHANGES_CYCLES
