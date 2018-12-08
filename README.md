@@ -2,4 +2,4 @@
 Motorola 68000 emulator written in ARM assembly
 
 This version has a few opcodes renamed to be compatible with clang.  
-The output ftom ths version is not compatible with GCC!
+The output from this version is not compatible with GCC(at least old versions of it)!
