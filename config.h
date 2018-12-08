@@ -34,9 +34,9 @@
  * will be smaller and load slightly faster and less relocations will be needed.
  * This also fixes the crash problem with 0xfffe and 0xffff opcodes.
  * Warning: if you enable this, you MUST call CycloneInit() before calling
- * CycloneRun(), or else it will crash.
+ * CycloneRun(), or else it will crash, also seems to cause SIGSEGVs when enabled.
  */
-#define COMPRESS_JUMPTABLE          1
+#define COMPRESS_JUMPTABLE          0
 
 /*
  * Address mask for memory hadlers. The bits set will be masked out of address
