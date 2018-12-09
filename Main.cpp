@@ -1299,6 +1299,31 @@ static int CycloneMake()
   ot("  %s Op6702\n",globl);
 #endif
   ot("\n");
+   
+  if (!ms)
+  {
+    ot("  .type CycloneInitJT,%%function\n");
+    ot("  .type CycloneResetJT,%%function\n");
+    ot("  .type CycloneRun,%%function\n");
+    ot("  .type CycloneSetSr,%%function\n");
+    ot("  .type CycloneGetSr,%%function\n");
+    ot("  .type CycloneFlushIrq,%%function\n");
+    ot("  .type CyclonePack,%%function\n");
+    ot("  .type CycloneUnpack,%%function\n");
+    ot("  .type CycloneVer,%%object\n");
+    ot("  .type CycloneJumpTab,%%object\n");
+#if (CYCLONE_FOR_GENESIS == 2)
+    ot("  .type CycloneSetRealTAS_JT,%%function\n");
+    ot("  .type CycloneDoInterrupt,%%function\n");
+    ot("  .type CycloneDoTrace,%%function\n");
+    ot("  .type Op____,%%function\n");
+    ot("  .type Op6002,%%function\n");
+    ot("  .type Op6602,%%function\n");
+    ot("  .type Op6702,%%function\n");
+#endif
+    ot("\n");
+  }
+   
   ot(ms?"CycloneVer dcd 0x":"CycloneVer: .long 0x");
   ot("%.4x\n",CycloneVer);
   ot("\n");
